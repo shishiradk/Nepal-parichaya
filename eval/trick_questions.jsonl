@@ -1,0 +1,15 @@
+{"id":"oos001","lang":"en","question":"Who won the 2024 FIFA World Cup?","why_oos":"Not about Nepal civics, not in book"}
+{"id":"oos002","lang":"ne","question":"भारतको प्रधानमन्त्री को हुन्?","why_oos":"About India, not Nepal"}
+{"id":"oos003","lang":"en","question":"What is the capital of France?","why_oos":"Not about Nepal"}
+{"id":"oos004","lang":"ne","question":"चीनको क्षेत्रफल कति हो?","why_oos":"About China, not Nepal"}
+{"id":"oos005","lang":"en","question":"Who is the current CEO of Tesla?","why_oos":"Not about Nepal, not in book"}
+{"id":"oos006","lang":"np-roman","question":"USA ko rastrapati ko hun?","why_oos":"About USA, not Nepal"}
+{"id":"oos007","lang":"ne","question":"पाइथन प्रोग्रामिङ भाषा कसले बनाएको हो?","why_oos":"Programming language history, not in book"}
+{"id":"oos008","lang":"en","question":"How do I bake chocolate cake?","why_oos":"Recipe, completely off-topic"}
+{"id":"oos009","lang":"en","question":"What is the GDP of Japan in 2024?","why_oos":"About Japan economy, not Nepal civics"}
+{"id":"oos010","lang":"ne","question":"भारतमा कति राज्य छन्?","why_oos":"About Indian states, not Nepal"}
+{"id":"oos011","lang":"en","question":"Who invented the telephone?","why_oos":"World history, not Nepal-specific"}
+{"id":"oos012","lang":"np-roman","question":"London ko mausam kasto hunchha?","why_oos":"About London weather, not Nepal"}
+{"id":"oos013","lang":"ne","question":"पाकिस्तानको राष्ट्रिय खेल के हो?","why_oos":"About Pakistan, not Nepal"}
+{"id":"oos014","lang":"en","question":"What's the best stock to buy today?","why_oos":"Financial advice, not Nepal civics"}
+{"id":"oos015","lang":"en","question":"What is the speed of light in vacuum?","why_oos":"Physics, not Nepal civics"}

@@ -1,0 +1,1083 @@
+{
+  "summary": {
+    "no_rag": {
+      "n": 50,
+      "correctness_mean": 4.8,
+      "pct_5_5": 0.9,
+      "recall@5": 0.0,
+      "cost_avg": 0.0003821
+    },
+    "bm25": {
+      "n": 50,
+      "correctness_mean": 2.4,
+      "pct_5_5": 0.3,
+      "recall@5": 0.32,
+      "cost_avg": 0.0050691
+    },
+    "vector_only": {
+      "n": 50,
+      "correctness_mean": 2.96,
+      "pct_5_5": 0.42,
+      "recall@5": 0.32,
+      "cost_avg": 0.00460565
+    }
+  },
+  "results": {
+    "no_rag": [
+      {
+        "id": "q001",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0001875,
+        "rank": null
+      },
+      {
+        "id": "q002",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.0001775,
+        "rank": null
+      },
+      {
+        "id": "q003",
+        "lang": "np-roman",
+        "score": 5,
+        "cost": 0.00019999999999999998,
+        "rank": null
+      },
+      {
+        "id": "q004",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0001875,
+        "rank": null
+      },
+      {
+        "id": "q005",
+        "lang": "en",
+        "score": 3,
+        "cost": 0.00026000000000000003,
+        "rank": null
+      },
+      {
+        "id": "q006",
+        "lang": "ne",
+        "score": 3,
+        "cost": 0.00030000000000000003,
+        "rank": null
+      },
+      {
+        "id": "q007",
+        "lang": "ne",
+        "score": 4,
+        "cost": 0.00019750000000000003,
+        "rank": null
+      },
+      {
+        "id": "q008",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.00031999999999999997,
+        "rank": null
+      },
+      {
+        "id": "q009",
+        "lang": "np-roman",
+        "score": 5,
+        "cost": 0.0002075,
+        "rank": null
+      },
+      {
+        "id": "q010",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.00021999999999999998,
+        "rank": null
+      },
+      {
+        "id": "q011",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.00029,
+        "rank": null
+      },
+      {
+        "id": "q012",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.00043999999999999996,
+        "rank": null
+      },
+      {
+        "id": "q013",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.00023,
+        "rank": null
+      },
+      {
+        "id": "q014",
+        "lang": "np-roman",
+        "score": 5,
+        "cost": 0.00043499999999999995,
+        "rank": null
+      },
+      {
+        "id": "q015",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.00033999999999999997,
+        "rank": null
+      },
+      {
+        "id": "q016",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.00019999999999999998,
+        "rank": null
+      },
+      {
+        "id": "q017",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.00026250000000000004,
+        "rank": null
+      },
+      {
+        "id": "q018",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.00019,
+        "rank": null
+      },
+      {
+        "id": "q019",
+        "lang": "np-roman",
+        "score": 5,
+        "cost": 0.0002675,
+        "rank": null
+      },
+      {
+        "id": "q020",
+        "lang": "ne",
+        "score": 4,
+        "cost": 0.0003925,
+        "rank": null
+      },
+      {
+        "id": "q021",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0002375,
+        "rank": null
+      },
+      {
+        "id": "q022",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.00025,
+        "rank": null
+      },
+      {
+        "id": "q023",
+        "lang": "np-roman",
+        "score": 5,
+        "cost": 0.00026250000000000004,
+        "rank": null
+      },
+      {
+        "id": "q024",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0004175,
+        "rank": null
+      },
+      {
+        "id": "q025",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.0004325,
+        "rank": null
+      },
+      {
+        "id": "q026",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0006825,
+        "rank": null
+      },
+      {
+        "id": "q027",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.0012250000000000002,
+        "rank": null
+      },
+      {
+        "id": "q028",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0012075,
+        "rank": null
+      },
+      {
+        "id": "q029",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.0019500000000000001,
+        "rank": null
+      },
+      {
+        "id": "q030",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0002625,
+        "rank": null
+      },
+      {
+        "id": "q031",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.0005625000000000001,
+        "rank": null
+      },
+      {
+        "id": "q032",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.000165,
+        "rank": null
+      },
+      {
+        "id": "q033",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.0001775,
+        "rank": null
+      },
+      {
+        "id": "q034",
+        "lang": "np-roman",
+        "score": 5,
+        "cost": 0.00020250000000000002,
+        "rank": null
+      },
+      {
+        "id": "q035",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.00020250000000000002,
+        "rank": null
+      },
+      {
+        "id": "q036",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.00017999999999999998,
+        "rank": null
+      },
+      {
+        "id": "q037",
+        "lang": "ne",
+        "score": 1,
+        "cost": 0.0002275,
+        "rank": null
+      },
+      {
+        "id": "q038",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.00021500000000000002,
+        "rank": null
+      },
+      {
+        "id": "q039",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.00017499999999999997,
+        "rank": null
+      },
+      {
+        "id": "q040",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.0002475,
+        "rank": null
+      },
+      {
+        "id": "q041",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.00021250000000000002,
+        "rank": null
+      },
+      {
+        "id": "q042",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.0012575,
+        "rank": null
+      },
+      {
+        "id": "q043",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0006325,
+        "rank": null
+      },
+      {
+        "id": "q044",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.00029,
+        "rank": null
+      },
+      {
+        "id": "q045",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0002725,
+        "rank": null
+      },
+      {
+        "id": "q046",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.0002725,
+        "rank": null
+      },
+      {
+        "id": "q047",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0002725,
+        "rank": null
+      },
+      {
+        "id": "q048",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0004275,
+        "rank": null
+      },
+      {
+        "id": "q049",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.00052,
+        "rank": null
+      },
+      {
+        "id": "q050",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.00035999999999999997,
+        "rank": null
+      }
+    ],
+    "bm25": [
+      {
+        "id": "q001",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.005535,
+        "rank": 1
+      },
+      {
+        "id": "q002",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.004,
+        "rank": null
+      },
+      {
+        "id": "q003",
+        "lang": "np-roman",
+        "score": 1,
+        "cost": 0.00489,
+        "rank": null
+      },
+      {
+        "id": "q004",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.004775,
+        "rank": 5
+      },
+      {
+        "id": "q005",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.0053974999999999995,
+        "rank": null
+      },
+      {
+        "id": "q006",
+        "lang": "ne",
+        "score": 1,
+        "cost": 0.003815,
+        "rank": null
+      },
+      {
+        "id": "q007",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0035124999999999996,
+        "rank": 1
+      },
+      {
+        "id": "q008",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.0059925,
+        "rank": null
+      },
+      {
+        "id": "q009",
+        "lang": "np-roman",
+        "score": 1,
+        "cost": 0.0049125,
+        "rank": null
+      },
+      {
+        "id": "q010",
+        "lang": "ne",
+        "score": 1,
+        "cost": 0.00522,
+        "rank": 1
+      },
+      {
+        "id": "q011",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.0059925,
+        "rank": null
+      },
+      {
+        "id": "q012",
+        "lang": "ne",
+        "score": 3,
+        "cost": 0.0053950000000000005,
+        "rank": 4
+      },
+      {
+        "id": "q013",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.0053974999999999995,
+        "rank": null
+      },
+      {
+        "id": "q014",
+        "lang": "np-roman",
+        "score": 1,
+        "cost": 0.004135,
+        "rank": null
+      },
+      {
+        "id": "q015",
+        "lang": "ne",
+        "score": 1,
+        "cost": 0.0050225,
+        "rank": null
+      },
+      {
+        "id": "q016",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.004785,
+        "rank": null
+      },
+      {
+        "id": "q017",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.00521,
+        "rank": 1
+      },
+      {
+        "id": "q018",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.00405,
+        "rank": null
+      },
+      {
+        "id": "q019",
+        "lang": "np-roman",
+        "score": 1,
+        "cost": 0.0048975,
+        "rank": null
+      },
+      {
+        "id": "q020",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.005529999999999999,
+        "rank": 1
+      },
+      {
+        "id": "q021",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.004725,
+        "rank": 2
+      },
+      {
+        "id": "q022",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.005965000000000001,
+        "rank": null
+      },
+      {
+        "id": "q023",
+        "lang": "np-roman",
+        "score": 1,
+        "cost": 0.0048925,
+        "rank": null
+      },
+      {
+        "id": "q024",
+        "lang": "ne",
+        "score": 1,
+        "cost": 0.0049975,
+        "rank": null
+      },
+      {
+        "id": "q025",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.0047625,
+        "rank": null
+      },
+      {
+        "id": "q026",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0058425,
+        "rank": 1
+      },
+      {
+        "id": "q027",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.0041375,
+        "rank": 2
+      },
+      {
+        "id": "q028",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.006042499999999999,
+        "rank": 1
+      },
+      {
+        "id": "q029",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.004795,
+        "rank": null
+      },
+      {
+        "id": "q030",
+        "lang": "ne",
+        "score": 4,
+        "cost": 0.0074399999999999996,
+        "rank": null
+      },
+      {
+        "id": "q031",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.00506,
+        "rank": null
+      },
+      {
+        "id": "q032",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.00425,
+        "rank": null
+      },
+      {
+        "id": "q033",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.0053950000000000005,
+        "rank": null
+      },
+      {
+        "id": "q034",
+        "lang": "np-roman",
+        "score": 1,
+        "cost": 0.0049075,
+        "rank": null
+      },
+      {
+        "id": "q035",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0051400000000000005,
+        "rank": null
+      },
+      {
+        "id": "q036",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.00476,
+        "rank": null
+      },
+      {
+        "id": "q037",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0058125,
+        "rank": null
+      },
+      {
+        "id": "q038",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.004765,
+        "rank": null
+      },
+      {
+        "id": "q039",
+        "lang": "ne",
+        "score": 1,
+        "cost": 0.0038099999999999996,
+        "rank": null
+      },
+      {
+        "id": "q040",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.0053950000000000005,
+        "rank": null
+      },
+      {
+        "id": "q041",
+        "lang": "ne",
+        "score": 1,
+        "cost": 0.0065025000000000005,
+        "rank": null
+      },
+      {
+        "id": "q042",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.004,
+        "rank": null
+      },
+      {
+        "id": "q043",
+        "lang": "ne",
+        "score": 4,
+        "cost": 0.0048575,
+        "rank": 1
+      },
+      {
+        "id": "q044",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.0040875,
+        "rank": null
+      },
+      {
+        "id": "q045",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0061,
+        "rank": 1
+      },
+      {
+        "id": "q046",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.0054,
+        "rank": null
+      },
+      {
+        "id": "q047",
+        "lang": "ne",
+        "score": 3,
+        "cost": 0.0060075,
+        "rank": 1
+      },
+      {
+        "id": "q048",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0054975,
+        "rank": 1
+      },
+      {
+        "id": "q049",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.0040025,
+        "rank": null
+      },
+      {
+        "id": "q050",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.005639999999999999,
+        "rank": 5
+      }
+    ],
+    "vector_only": [
+      {
+        "id": "q001",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0048025,
+        "rank": null
+      },
+      {
+        "id": "q002",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.0033825,
+        "rank": 1
+      },
+      {
+        "id": "q003",
+        "lang": "np-roman",
+        "score": 5,
+        "cost": 0.00373,
+        "rank": null
+      },
+      {
+        "id": "q004",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0037300000000000002,
+        "rank": null
+      },
+      {
+        "id": "q005",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.004285,
+        "rank": null
+      },
+      {
+        "id": "q006",
+        "lang": "ne",
+        "score": 1,
+        "cost": 0.00422,
+        "rank": null
+      },
+      {
+        "id": "q007",
+        "lang": "ne",
+        "score": 1,
+        "cost": 0.0038825000000000005,
+        "rank": null
+      },
+      {
+        "id": "q008",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.0050725,
+        "rank": null
+      },
+      {
+        "id": "q009",
+        "lang": "np-roman",
+        "score": 1,
+        "cost": 0.0036025,
+        "rank": null
+      },
+      {
+        "id": "q010",
+        "lang": "ne",
+        "score": 1,
+        "cost": 0.0038925,
+        "rank": null
+      },
+      {
+        "id": "q011",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.005722500000000001,
+        "rank": null
+      },
+      {
+        "id": "q012",
+        "lang": "ne",
+        "score": 3,
+        "cost": 0.0067625,
+        "rank": 6
+      },
+      {
+        "id": "q013",
+        "lang": "en",
+        "score": 4,
+        "cost": 0.00156,
+        "rank": null
+      },
+      {
+        "id": "q014",
+        "lang": "np-roman",
+        "score": 1,
+        "cost": 0.0034775,
+        "rank": null
+      },
+      {
+        "id": "q015",
+        "lang": "ne",
+        "score": 1,
+        "cost": 0.0035375,
+        "rank": null
+      },
+      {
+        "id": "q016",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.005667499999999999,
+        "rank": null
+      },
+      {
+        "id": "q017",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.005150000000000001,
+        "rank": 5
+      },
+      {
+        "id": "q018",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.0039499999999999995,
+        "rank": null
+      },
+      {
+        "id": "q019",
+        "lang": "np-roman",
+        "score": 1,
+        "cost": 0.0046700000000000005,
+        "rank": null
+      },
+      {
+        "id": "q020",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.004475,
+        "rank": 1
+      },
+      {
+        "id": "q021",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0045425,
+        "rank": 1
+      },
+      {
+        "id": "q022",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.004730000000000001,
+        "rank": 1
+      },
+      {
+        "id": "q023",
+        "lang": "np-roman",
+        "score": 5,
+        "cost": 0.0042499999999999994,
+        "rank": 2
+      },
+      {
+        "id": "q024",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.003745,
+        "rank": 6
+      },
+      {
+        "id": "q025",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.00439,
+        "rank": null
+      },
+      {
+        "id": "q026",
+        "lang": "ne",
+        "score": 1,
+        "cost": 0.003325,
+        "rank": null
+      },
+      {
+        "id": "q027",
+        "lang": "en",
+        "score": 4,
+        "cost": 0.00505,
+        "rank": null
+      },
+      {
+        "id": "q028",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0058075,
+        "rank": 1
+      },
+      {
+        "id": "q029",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.0066949999999999996,
+        "rank": 2
+      },
+      {
+        "id": "q030",
+        "lang": "ne",
+        "score": 1,
+        "cost": 0.00603,
+        "rank": null
+      },
+      {
+        "id": "q031",
+        "lang": "en",
+        "score": 3,
+        "cost": 0.0045975,
+        "rank": null
+      },
+      {
+        "id": "q032",
+        "lang": "ne",
+        "score": 1,
+        "cost": 0.005465,
+        "rank": null
+      },
+      {
+        "id": "q033",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.0038375,
+        "rank": null
+      },
+      {
+        "id": "q034",
+        "lang": "np-roman",
+        "score": 1,
+        "cost": 0.0044775,
+        "rank": null
+      },
+      {
+        "id": "q035",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.003175,
+        "rank": null
+      },
+      {
+        "id": "q036",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.00472,
+        "rank": 3
+      },
+      {
+        "id": "q037",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0031999999999999997,
+        "rank": null
+      },
+      {
+        "id": "q038",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.004385,
+        "rank": 3
+      },
+      {
+        "id": "q039",
+        "lang": "ne",
+        "score": 1,
+        "cost": 0.0057174999999999995,
+        "rank": null
+      },
+      {
+        "id": "q040",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.0055025000000000004,
+        "rank": null
+      },
+      {
+        "id": "q041",
+        "lang": "ne",
+        "score": 1,
+        "cost": 0.0035449999999999995,
+        "rank": null
+      },
+      {
+        "id": "q042",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.0062175,
+        "rank": null
+      },
+      {
+        "id": "q043",
+        "lang": "ne",
+        "score": 1,
+        "cost": 0.0048200000000000005,
+        "rank": null
+      },
+      {
+        "id": "q044",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.0056325,
+        "rank": 1
+      },
+      {
+        "id": "q045",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0059275,
+        "rank": 1
+      },
+      {
+        "id": "q046",
+        "lang": "en",
+        "score": 1,
+        "cost": 0.004079999999999999,
+        "rank": null
+      },
+      {
+        "id": "q047",
+        "lang": "ne",
+        "score": 3,
+        "cost": 0.0052474999999999996,
+        "rank": 1
+      },
+      {
+        "id": "q048",
+        "lang": "ne",
+        "score": 5,
+        "cost": 0.0042,
+        "rank": 1
+      },
+      {
+        "id": "q049",
+        "lang": "en",
+        "score": 5,
+        "cost": 0.00406,
+        "rank": 2
+      },
+      {
+        "id": "q050",
+        "lang": "ne",
+        "score": 3,
+        "cost": 0.0073375,
+        "rank": 1
+      }
+    ]
+  }
+}

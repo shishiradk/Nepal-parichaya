@@ -1,0 +1,4 @@
+{
+  "_comment": "Known OCR errors in markdown_output/. Key = wrong text, value = correct text. Applied during chunking.",
+  "सयौं घुँगा फूलका": "सयौं थुँगा फूलका"
+}
