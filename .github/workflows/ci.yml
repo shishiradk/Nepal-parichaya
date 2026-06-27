@@ -1,0 +1,116 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: Django check + unit tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install minimal CI dependencies
+        # Only what's needed for unit tests — full requirements.txt has torch/chromadb
+        # (multi-GB) which we don't need for the mocked test suite.
+        run: |
+          pip install --upgrade pip
+          pip install \
+            "Django>=6.0" \
+            "djangorestframework>=3.17" \
+            "drf-spectacular>=0.29" \
+            "drf-spectacular-sidecar" \
+            "django-cors-headers" \
+            "whitenoise[brotli]" \
+            "openai>=2.0" \
+            "python-dotenv" \
+            "requests"
+
+      - name: Django system check
+        run: python manage.py check
+
+      - name: Run unit tests
+        run: python manage.py test api --verbosity 2
+
+  schema:
+    name: OpenAPI schema generation
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install minimal CI dependencies
+        run: |
+          pip install --upgrade pip
+          pip install \
+            "Django>=6.0" \
+            "djangorestframework>=3.17" \
+            "drf-spectacular>=0.29" \
+            "drf-spectacular-sidecar" \
+            "django-cors-headers" \
+            "whitenoise[brotli]" \
+            "openai>=2.0" \
+            "python-dotenv" \
+            "requests"
+
+      - name: Generate OpenAPI schema
+        # If any view's @extend_schema metadata becomes invalid the build fails.
+        env:
+          PYTHONIOENCODING: utf-8
+        run: python manage.py spectacular --file api-schema.yml
+
+      - name: Upload generated schema as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: openapi-schema
+          path: api-schema.yml
+
+  eval-substrings:
+    name: Verify eval test-set substrings
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install minimal dependencies
+        # verify_substrings.py only reads files — no Django, no OpenAI.
+        run: pip install python-dotenv
+
+      - name: Verify test_set gold_substrings exist in chunks
+        # If a substring no longer appears in the chunks, the eval would silently
+        # under-report retrieval recall. Catch it before it lands.
+        run: |
+          if [ -d chunked_output/clean_chunks ]; then
+            python eval/verify_substrings.py --test eval/test_set.jsonl
+          else
+            echo "::notice::Skipping — chunked_output/clean_chunks not committed (regeneratable)."
+          fi

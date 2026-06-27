@@ -1,6 +1,22 @@
 # Nepal Parichaya RAG
 
-A Retrieval-Augmented Generation (RAG) system for the **Nepal Parichaya** book. Ask questions in Nepali, Romanized Nepali, or English and get answers grounded strictly in the book.
+[![CI](https://github.com/shishiradk/Nepal-parichaya-/actions/workflows/ci.yml/badge.svg)](https://github.com/shishiradk/Nepal-parichaya-/actions/workflows/ci.yml)
+[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3120/)
+[![Django 6.0](https://img.shields.io/badge/django-6.0-green.svg)](https://www.djangoproject.com/)
+[![License: CC BY 4.0](https://img.shields.io/badge/license-CC%20BY%204.0-lightgrey.svg)](LICENSE)
+
+A multilingual Retrieval-Augmented Generation (RAG) system for the **Nepal Parichaya** civics book — Django REST API + Streamlit UI + reproducible eval suite. Ask questions in **Nepali, Romanized Nepali, or English**; answers are grounded strictly in the source text and returned with citable chunks.
+
+**Headline eval results** (full report in [`eval/EVAL_REPORT.md`](eval/EVAL_REPORT.md)):
+
+| Metric | Original | After eval-driven fix |
+|---|---|---|
+| Retrieval Recall@5 | 0.36 | **0.80** *(+122%)* |
+| Answer correctness (1–5) | 3.00 | **4.00** |
+| Nepali correctness | 2.75 | **4.08** *(was worst, now best)* |
+| Hallucination rate | 10% | 14% |
+| Out-of-scope refusal | 100% | **100%** |
+| Cost / query | — | **$0.005** (gpt-4o) |
 
 ## Features
 
@@ -15,25 +31,28 @@ A Retrieval-Augmented Generation (RAG) system for the **Nepal Parichaya** book. 
 ## Project Structure
 
 ```
-├── rag/                    # Shared RAG module
-│   ├── config.py           # Constants, prompts, Romanized→Devanagari dict
+├── rag/                    # Core RAG module — pipeline shared by every frontend
+│   ├── config.py           # Constants, paths, dicts, system prompt
 │   ├── normalizer.py       # normalize_query() — Romanized/English → Devanagari
 │   ├── retriever.py        # retrieve() — hybrid vector + keyword search
 │   ├── generator.py        # generate_answer() — GPT answer generation
 │   └── store.py            # ChromaDB load/build, chunk loader
 │
-├── nepali_rag_openai.py    # CLI entry point
-├── streamlit_app.py        # Streamlit UI entry point
-│
-├── manage.py               # Django management entrypoint (REST API)
+├── api/                    # Django REST app (views, serializers, permissions)
 ├── nepali_rag_api/         # Django project (settings, urls, wsgi)
-├── api/                    # Django app — REST views, serializers, permissions
+├── manage.py               # Django entrypoint
+├── rag_api_client.py       # HTTP client used by streamlit_app.py
+├── streamlit_app.py        # Streamlit UI (calls /api/query)
+├── nepali_rag_openai.py    # CLI entry point
 │
-├── eval/                   # Evaluation suite (test set, runners, report)
+├── eval/                   # Evaluation suite — test set, runners, EVAL_REPORT
 ├── scripts/
 │   └── rebuild_chunks.py   # Topic-aware chunker (markdown → clean chunks)
 │
-├── gcp/                    # Archived GCP/Vertex AI pipeline (OCR, old RAG)
+├── data/                   # Source documents
+│   └── Nepal_Parichaya.pdf
+├── docs/                   # Extended documentation
+│   └── GUIDE.md
 │
 ├── markdown_output/        # OCR markdown from Document AI (43 pages)
 ├── chunked_output/         # Topic-aware chunks (generated, gitignored)
@@ -225,4 +244,3 @@ The vector store loads lazily on the first request (cold-start ~2-3s), then stay
 - **Vector store**: ChromaDB (local, persistent)
 - **UI**: Streamlit
 - **OCR source**: Google Document AI (archived in `gcp/`)
-# Nepal-parichaya-

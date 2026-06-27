@@ -1,22 +1,17 @@
+import os
 from pathlib import Path
 
 # --- Paths (relative to project root) ---
 CHROMA_DIR      = Path("chroma_db")
 COLLECTION_NAME = "nepal_parichaya"
-_CHUNKS_CLEAN   = Path("chunked_output/clean_chunks")
-_CHUNKS_OLD     = Path("chunked_output/chunks")
-CHUNKS_DIR      = _CHUNKS_CLEAN if _CHUNKS_CLEAN.exists() and any(_CHUNKS_CLEAN.glob("*.md")) else _CHUNKS_OLD
-METADATA_FILE   = (
-    Path("chunked_output/clean_chunks_metadata.json")
-    if CHUNKS_DIR == _CHUNKS_CLEAN
-    else Path("chunked_output/chunks_metadata.json")
-)
+CHUNKS_DIR      = Path("chunked_output/clean_chunks")
+METADATA_FILE   = Path("chunked_output/clean_chunks_metadata.json")
 
-# --- Models ---
-EMBEDDING_MODEL      = "text-embedding-3-small"
-LLM_MODEL            = "gpt-4o"
-TOP_K                = 8
-MIN_SIMILARITY       = 0.25
+# --- Models (overridable via env vars for staging / prod / ablations) ---
+EMBEDDING_MODEL      = os.environ.get("RAG_EMBEDDING_MODEL", "text-embedding-3-small")
+LLM_MODEL            = os.environ.get("RAG_LLM_MODEL", "gpt-4o")
+TOP_K                = int(os.environ.get("RAG_TOP_K", "8"))
+MIN_SIMILARITY       = float(os.environ.get("RAG_MIN_SIMILARITY", "0.25"))
 EMBEDDING_BATCH_SIZE = 100
 
 # --- Cost table ($ per 1M tokens) — unknown models fall back to gpt-4o-mini rates ---
