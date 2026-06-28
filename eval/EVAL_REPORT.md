@@ -58,24 +58,26 @@ A retrieved chunk "matches" if it contains the test entry's distinctive `gold_su
 
 ## 3. Generation — are the answers correct, grounded, in the right language?
 
-| Metric | Before fix | **After fix** |
-|---|---|---|
-| **Answer correctness (mean, 1–5)** | 3.00 | **4.00** |
-| % scored 5/5 | 44% | **70%** |
-| Faithfulness (mean, 1–5) | 4.68 | 4.56 |
-| Hallucination rate (% with faithfulness ≤ 3) | 10% | 14% |
-| Language adherence (% answer in question's script) | 94% | **98%** |
-| Out-of-scope refusal accuracy | 100% | **100% (15/15)** |
+| Metric | Original | + Dev boost (v1) | **+ Dict expansion (v2, final)** |
+|---|---|---|---|
+| **Answer correctness (mean, 1–5)** | 3.00 | 4.00 | **4.10** |
+| % scored 5/5 | 44% | 70% | **70%** |
+| Faithfulness (mean, 1–5) | 4.68 | 4.56 | 4.54 |
+| Hallucination rate (% with faithfulness ≤ 3) | 10% | 14% | 16% |
+| Language adherence (% answer in question's script) | 94% | 98% | **100%** |
+| Out-of-scope refusal accuracy | 100% | 100% | **100% (15/15)** |
+| Cost / query (mean) | — | $0.005 | $0.006 |
+| Latency (p50 / p95) | — | 3.3 s / 8.3 s | 4.5 s / 7.6 s |
 
 ### Per-language correctness (mean 1–5)
 
-| Language | Before fix | **After fix** |
-|---|---|---|
-| Nepali Devanagari | 2.75 | **4.08** |
-| English | 3.60 | **4.00** |
-| Romanized Nepali | 2.00 | **3.67** |
+| Language | Original | + Dev boost | **Final (v2)** |
+|---|---|---|---|
+| Nepali Devanagari | 2.75 | 4.08 | **4.21** ← best |
+| English | 3.60 | 4.00 | **4.15** |
+| Romanized Nepali | 2.00 | 3.67 | 3.50 *(n=6, small-N variance)* |
 
-**Key reading:** the Devanagari keyword-boost fix lifted retrieval, and the retrieval lift propagated straight to correctness. Devanagari went from **worst-performing** (2.75) to **best-performing** (4.08) — the language asymmetry didn't just close, it inverted. The slight faithfulness dip (4.68 → 4.56) and matching hallucination uptick (10% → 14%) is the expected tradeoff: more chunks reach the LLM, so occasionally a near-miss chunk gets used. A 1.0-point gain in correctness for a 0.12 dip in faithfulness is a clearly positive trade.
+**Key reading:** the Devanagari boost fix + dict expansion lifted retrieval, and the retrieval lift propagated straight to correctness. **Devanagari went from worst-performing (2.75) to best-performing (4.21)** — the language asymmetry didn't just close, it inverted. The faithfulness dip (4.68 → 4.54) and hallucination uptick (10% → 16%) is the expected tradeoff for broader retrieval: more chunks reach the LLM, so occasionally a near-miss gets used. A 1.1-point correctness gain for a 0.14 faithfulness dip is a clearly positive trade for this product (groundedness still 4.54/5, refusal still 100%).
 
 > *Run:* `python eval/run_e2e_eval.py --test eval/test_set.jsonl --trick eval/trick_questions.jsonl --out eval/results/e2e.json`
 
@@ -139,9 +141,26 @@ Added `_DEV_KEYWORD_BOOST` in `rag/config.py` — a Devanagari-keyed mirror of t
 
 Re-inspected the 11 remaining mid-rank retrievals (rank 6-18). Added new entries for `हिमाल`, `अग्लो`, `२०४६`, `२०६२` — each plugs a class of queries that were missing.
 
-### Chain attempt that didn't work (honest negative result)
+### Chain attempt that didn't work (honest negative result #1)
 
 Also tried *chaining* English dict outputs through `_DEV_KEYWORD_BOOST` (e.g. `capital` → `राजधानी` → also boost `काठमाडौं`). Measured retrieval went **down** (EN R@5: 0.70 → 0.65) because chained targets were less distinctive than the originals — `काठमाडौं` appears in many chunks, diluting the boost. **Reverted.** Worth keeping in the report as a documented negative result.
+
+### Cross-encoder re-ranker — also hurt (honest negative result #2)
+
+The textbook next move after a custom retriever is to add a learned cross-encoder re-ranker. Tried `BAAI/bge-reranker-base` (multilingual, ~280MB) over the top-20 candidates from the existing retriever.
+
+**Result — all metrics regressed:**
+
+| Metric | Before re-ranker | After re-ranker | Δ |
+|---|---|---|---|
+| Recall@1 | 0.620 | 0.280 | **−0.340** |
+| Recall@5 | 0.720 | 0.620 | −0.100 |
+| Recall@10 | 0.800 | 0.720 | −0.080 |
+| MRR | 0.676 | 0.434 | −0.242 |
+
+Per-question logs show many chunks went from rank #1 → rank #10–31 after re-ranking. **The re-ranker actively undid the work of the engineered keyword-boost.** The retriever was placing the correct chunk at rank #1 via the `sim=0.99` boost from `_DEV_KEYWORD_BOOST`; the re-ranker, which has no knowledge of this domain prior, replaced our engineered relevance signal with its own generic multilingual semantic score — which was demonstrably worse for this domain.
+
+**The lesson:** the standard "always add a reranker" advice doesn't apply when you have a strong domain-engineered relevance signal upstream. A learned reranker can outperform a vector-only retriever, but it underperformed our hybrid + dict-boost retriever by a wide margin. **Not deployed.** Eval script kept in `eval/run_reranker_eval.py` so the negative result is reproducible.
 
 ### Cumulative result
 
@@ -154,7 +173,7 @@ Also tried *chaining* English dict outputs through `_DEV_KEYWORD_BOOST` (e.g. `c
 
 Overall recall@5 went from 0.36 → 0.80, MRR from 0.33 → 0.74. The eval surfaced the gap, the fix took ~40 lines of code, and the gain replicates strongly on Devanagari.
 
-> ⚠️ **e2e correctness numbers in §3 reflect "Fix v1" only.** A final e2e run with v2 dict was blocked by OpenAI API quota exhaustion before completion. The marginal e2e lift from v2 is expected but unmeasured; the retrieval lift (0.78 → 0.80, NE 0.88 → 0.92) is measured and definitive.
+End-to-end correctness lift (final, v2): **3.00 → 4.10** mean; NE correctness **2.75 → 4.21** (worst-performing language → best-performing).
 
 ### Remaining failure modes (post-fix)
 
@@ -216,7 +235,10 @@ python eval/run_reranker_eval.py --test eval/test_set.jsonl --out eval/results/r
 
 ## 10. Open / future work
 
-- **Re-ranker measurement.** `run_reranker_eval.py` is scaffolded with BAAI/bge-reranker-base (multilingual, ~280MB) but unmeasured (API quota blocker at last attempt). Expected to lift recall@5 by 5-15pp by re-scoring noisy top-K orderings; runs locally on CPU so adds no API cost at inference.
-- **Final e2e run with v2 dict.** Retrieval v2 measured (0.80 R@5); e2e correctness re-measurement blocked by API quota — likely small but unverified additional gain over the §3 numbers.
-- **Expand test set with obscure facts.** Current 50-Q set is biased toward famous facts where no-RAG already scores 4.80/5 (see §5). To genuinely differentiate RAG from gpt-4o memory, need more obscure-fact questions.
-- **Multilingual embedding ablation** (BGE-M3, multilingual-e5) — out of scope for this iteration due to existing ChromaDB lock-in; flagged for next major version.
+- **Expand test set with obscure facts.** Current 50-Q set is biased toward famous facts where no-RAG already scores 4.80/5 (see §5). To genuinely differentiate RAG from gpt-4o memory on the *correctness* axis, need more obscure-fact questions. Methodologically the highest-leverage improvement.
+- **Multilingual embedding ablation** (BGE-M3, multilingual-e5) — out of scope for this iteration due to existing ChromaDB lock-in (would require rebuild + re-indexing all 951 chunks); flagged for next major version.
+- **Continuous OCR-correction loop.** `scripts/review_queue.py` already exists to convert user-reported errors into chunk-level corrections; eval reruns will quantify the impact of each batch of corrections over time.
+
+*Previously listed as open work, now resolved:*
+- ~~Re-ranker measurement~~ → measured. Cross-encoder hurt rather than helped (§6 negative result #2). Eval script and result preserved for reproducibility.
+- ~~Final e2e with v2 dict~~ → measured. Numbers in §3.

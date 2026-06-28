@@ -1,0 +1,1123 @@
+{
+  "summary": {
+    "n_test": 50,
+    "n_trick": 15,
+    "correctness_mean": 4.1,
+    "correctness_5_pct": 0.7,
+    "faithfulness_mean": 4.54,
+    "hallucination_pct": 0.16,
+    "lang_adherence_pct": 1.0,
+    "refusal_accuracy_pct": 1.0,
+    "cost_avg": 0.0055201538461538465,
+    "cost_p95": 0.007560000000000001,
+    "latency_p50_s": 4.496845245361328,
+    "latency_p95_s": 7.613645792007446,
+    "per_language_correctness": {
+      "ne": 4.208333333333333,
+      "en": 4.15,
+      "np-roman": 3.5
+    }
+  },
+  "results": [
+    {
+      "id": "q001",
+      "lang": "ne",
+      "type": "test",
+      "question": "नेपालमा कति जिल्ला छन्?",
+      "gold": "नेपालमा ७७ जिल्ला छन्।",
+      "answer": "नेपालमा ७७ जिल्ला छन्।",
+      "correctness": {
+        "score": 5,
+        "reason": "Fully correct, all key facts match."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The claim that Nepal has 77 districts is directly supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.0047275,
+      "latency_s": 11.720213890075684
+    },
+    {
+      "id": "q002",
+      "lang": "en",
+      "type": "test",
+      "question": "How many districts are in Nepal?",
+      "gold": "Nepal has 77 districts.",
+      "answer": "Nepal has 77 districts.",
+      "correctness": {
+        "score": 5,
+        "reason": "The system answer is fully correct and matches the gold answer."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The claim that Nepal has 77 districts is directly supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.0069949999999999995,
+      "latency_s": 9.547893762588501
+    },
+    {
+      "id": "q003",
+      "lang": "np-roman",
+      "type": "test",
+      "question": "nepal ma kati district chha?",
+      "gold": "Nepal has 77 districts.",
+      "answer": "Sorry, I couldn't find that in the provided context. Try rephrasing your question — I'm happy to help!",
+      "correctness": {
+        "score": 1,
+        "reason": "The system answer is wrong and does not provide the factual information that Nepal has 77 districts."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The answer does not make any factual claims."
+      },
+      "lang_match": "match",
+      "cost": 0.00709,
+      "latency_s": 6.698063611984253
+    },
+    {
+      "id": "q004",
+      "lang": "ne",
+      "type": "test",
+      "question": "नेपालमा कति प्रदेश छन्?",
+      "gold": "नेपालमा सात प्रदेश छन्।",
+      "answer": "नेपालमा ७ प्रदेश छन्।",
+      "correctness": {
+        "score": 5,
+        "reason": "Fully correct, all key facts match."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The claim that Nepal has 7 provinces is directly supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.0048125,
+      "latency_s": 4.646172523498535
+    },
+    {
+      "id": "q005",
+      "lang": "en",
+      "type": "test",
+      "question": "What is the total area of Nepal?",
+      "gold": "Nepal's total area is 1,47,181 sq km (56,827 sq miles).",
+      "answer": "Sorry, I couldn't find that in the provided context. Try rephrasing your question — I'm happy to help!",
+      "correctness": {
+        "score": 1,
+        "reason": "The system answer is off-topic and does not provide any factual information about Nepal's total area."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The answer does not make any factual claims and is consistent with the context provided."
+      },
+      "lang_match": "match",
+      "cost": 0.0062525,
+      "latency_s": 6.5302393436431885
+    },
+    {
+      "id": "q006",
+      "lang": "ne",
+      "type": "test",
+      "question": "नेपालको क्षेत्रफल कति हो?",
+      "gold": "नेपालको क्षेत्रफल १,४७,१८१ वर्ग कि.मि. छ।",
+      "answer": "नेपालको क्षेत्रफल १,४७,१८१ वर्ग कि.मि. अर्थात् ५६,८२७ वर्गमाइल छ।",
+      "correctness": {
+        "score": 5,
+        "reason": "The system answer is fully correct and matches the key facts of the gold answer."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "Every factual claim in the answer is supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.0056325,
+      "latency_s": 3.650880813598633
+    },
+    {
+      "id": "q007",
+      "lang": "ne",
+      "type": "test",
+      "question": "नेपालको राष्ट्रिय फूल के हो?",
+      "gold": "नेपालको राष्ट्रिय फूल लालीगुराँस हो।",
+      "answer": "नेपालको राष्ट्रिय फूल लालीगुराँस हो।",
+      "correctness": {
+        "score": 5,
+        "reason": "The system answer is fully correct and matches the gold answer."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The claim that Nepal's national flower is Lali Gurans is supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.0033449999999999994,
+      "latency_s": 4.32870078086853
+    },
+    {
+      "id": "q008",
+      "lang": "en",
+      "type": "test",
+      "question": "What is the national flower of Nepal?",
+      "gold": "Rhododendron (Lali Gurans) is the national flower.",
+      "answer": "The national flower of Nepal is the Rhododendron, known as \"लालीगुराँस\" in Nepali.",
+      "correctness": {
+        "score": 5,
+        "reason": "The system answer is fully correct and matches all key facts with the gold answer."
+      },
+      "faithfulness": {
+        "score": 4,
+        "reason": "The context supports that Rhododendron is used as a logo, implying its national significance, but does not explicitly state it as the national flower."
+      },
+      "lang_match": "match",
+      "cost": 0.0043549999999999995,
+      "latency_s": 5.771301746368408
+    },
+    {
+      "id": "q009",
+      "lang": "np-roman",
+      "type": "test",
+      "question": "nepal ko rastriya phul k ho?",
+      "gold": "The national flower is Lali Gurans (Rhododendron).",
+      "answer": "Sorry, I couldn't find that in the provided context. Try rephrasing your question — I'm happy to help!",
+      "correctness": {
+        "score": 1,
+        "reason": "The system answer is wrong and does not provide any factual information about Nepal's national flower."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The answer makes no factual claims and is consistent with the context."
+      },
+      "lang_match": "match",
+      "cost": 0.00505,
+      "latency_s": 4.090479135513306
+    },
+    {
+      "id": "q010",
+      "lang": "ne",
+      "type": "test",
+      "question": "नेपालको राष्ट्रिय चरा कुन हो?",
+      "gold": "नेपालको राष्ट्रिय चरा डाँफे हो।",
+      "answer": "माफ गर्नुहोस्, यो जानकारी दिइएको सन्दर्भमा भेटिएन। प्रश्न अलि फरक तरिकाले सोध्नुभयो भने सहयोग गर्न सक्छु।",
+      "correctness": {
+        "score": 1,
+        "reason": "The system answer is wrong and does not provide the correct information about Nepal's national bird."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The answer correctly states that the information is not found in the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.0051725,
+      "latency_s": 3.875032901763916
+    },
+    {
+      "id": "q011",
+      "lang": "en",
+      "type": "test",
+      "question": "What is the national bird of Nepal?",
+      "gold": "The Himalayan Monal (Danphe) is Nepal's national bird.",
+      "answer": "Sorry, I couldn't find that in the provided context. Try rephrasing your question — I'm happy to help!",
+      "correctness": {
+        "score": 1,
+        "reason": "The system answer is wrong and does not provide any factual information about Nepal's national bird."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The answer correctly states that the information is not found in the provided context."
+      },
+      "lang_match": "match",
+      "cost": 0.005582500000000001,
+      "latency_s": 5.031707286834717
+    },
+    {
+      "id": "q012",
+      "lang": "ne",
+      "type": "test",
+      "question": "सगरमाथाको उचाइ कति हो?",
+      "gold": "सगरमाथाको उचाइ ८८४८.८६ मिटर हो।",
+      "answer": "सगरमाथाको उचाइ ८,८४८.६८ मिटर हो।",
+      "correctness": {
+        "score": 3,
+        "reason": "The system answer has a minor numerical error in the height."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The claim about the height of Sagarmatha is directly supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.006520000000000001,
+      "latency_s": 4.230677604675293
+    },
+    {
+      "id": "q013",
+      "lang": "en",
+      "type": "test",
+      "question": "What is the height of Mount Everest?",
+      "gold": "Mount Everest is 8848.86 metres tall.",
+      "answer": "The height of Mount Everest is 8,848.86 meters above sea level.",
+      "correctness": {
+        "score": 5,
+        "reason": "The system answer is fully correct and matches the key facts of the gold answer."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The height of Mount Everest is supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.0065875,
+      "latency_s": 5.132637023925781
+    },
+    {
+      "id": "q014",
+      "lang": "np-roman",
+      "type": "test",
+      "question": "sagarmatha ko uchai kati ho?",
+      "gold": "Mount Everest is 8848.86 metres.",
+      "answer": "The height of Sagarmatha (Mount Everest) is 8,848.68 meters above sea level.",
+      "correctness": {
+        "score": 4,
+        "reason": "Minor numerical discrepancy in the height value."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The height of Sagarmatha is explicitly stated as 8,848.68 meters in the context."
+      },
+      "lang_match": "match",
+      "cost": 0.00664,
+      "latency_s": 4.9067347049713135
+    },
+    {
+      "id": "q015",
+      "lang": "ne",
+      "type": "test",
+      "question": "नेपालको सबैभन्दा अग्लो हिमाल कुन हो?",
+      "gold": "सगरमाथा नेपालको सबैभन्दा अग्लो हिमाल हो।",
+      "answer": "माफ गर्नुहोस्, यो जानकारी दिइएको सन्दर्भमा भेटिएन। प्रश्न अलि फरक तरिकाले सोध्नुभयो भने सहयोग गर्न सक्छु।",
+      "correctness": {
+        "score": 1,
+        "reason": "The system answer is wrong and does not provide any factual information about the tallest mountain in Nepal."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The answer correctly states that the information is not found in the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.00399,
+      "latency_s": 3.6670923233032227
+    },
+    {
+      "id": "q016",
+      "lang": "en",
+      "type": "test",
+      "question": "What is the highest mountain in Nepal?",
+      "gold": "Mount Everest (Sagarmatha) is the highest mountain.",
+      "answer": "The highest mountain in Nepal is Mount Everest, also known as Sagarmatha.",
+      "correctness": {
+        "score": 5,
+        "reason": "Fully correct, all key facts match."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The claim about Mount Everest being the highest mountain in Nepal is supported by the context."
+      },
+      "lang_match": "match",
+      "cost": 0.0057125000000000006,
+      "latency_s": 6.047569274902344
+    },
+    {
+      "id": "q017",
+      "lang": "ne",
+      "type": "test",
+      "question": "नेपाल एकीकरण कसले गरेका हुन्?",
+      "gold": "पृथ्वीनारायण शाहले नेपाल एकीकरण गरेका हुन्।",
+      "answer": "नेपाल एकीकरण पृथ्वीनारायण शाहले गरेका हुन्।",
+      "correctness": {
+        "score": 5,
+        "reason": "Fully correct, all key facts match."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The claim that Nepal's unification was done by Prithvi Narayan Shah is supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.007340000000000001,
+      "latency_s": 3.744874954223633
+    },
+    {
+      "id": "q018",
+      "lang": "en",
+      "type": "test",
+      "question": "Who unified Nepal?",
+      "gold": "Prithvi Narayan Shah unified Nepal.",
+      "answer": "Prithvi Narayan Shah unified Nepal. He initiated the national unification campaign and established a unified modern Nepal through successful diplomacy, strategy, and military tactics.",
+      "correctness": {
+        "score": 5,
+        "reason": "The system answer is fully correct and matches all key facts with the gold answer."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "Every claim in the answer is supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.0079025,
+      "latency_s": 5.414728403091431
+    },
+    {
+      "id": "q019",
+      "lang": "np-roman",
+      "type": "test",
+      "question": "nepal ekikaran kasle gareko ho?",
+      "gold": "Prithvi Narayan Shah led the unification of Nepal.",
+      "answer": "Nepal's unification was carried out by King Prithvi Narayan Shah. He initiated the national unification campaign and established a unified modern Nepal.",
+      "correctness": {
+        "score": 5,
+        "reason": "The system answer is fully correct and matches all key facts with the gold answer."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "Every claim in the answer is supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.0071849999999999995,
+      "latency_s": 5.255749940872192
+    },
+    {
+      "id": "q020",
+      "lang": "ne",
+      "type": "test",
+      "question": "पृथ्वीनारायण शाहले ललितपुरमाथि कब्जा कहिले गरे?",
+      "gold": "पृथ्वीनारायण शाहले १७६८ अक्टुबर ६ का दिन ललितपुरमाथि कब्जा गरेका हुन्।",
+      "answer": "पृथ्वीनारायण शाहले ललितपुरमाथि सन् १७६८ अक्टुबर ६ का दिन कब्जा गरे।",
+      "correctness": {
+        "score": 5,
+        "reason": "The system answer is fully correct and matches all key facts with the gold answer."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The claim about Prithvi Narayan Shah's capture of Lalitpur on October 6, 1768, is fully supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.0049225,
+      "latency_s": 3.317408800125122
+    },
+    {
+      "id": "q021",
+      "lang": "ne",
+      "type": "test",
+      "question": "नेपालको पहिलो राष्ट्रपति को हुन्?",
+      "gold": "नेपालको पहिलो राष्ट्रपति डा. रामवरण यादव हुन्।",
+      "answer": "नेपालका पहिलो राष्ट्रपति डा. रामवरण यादव हुन्।",
+      "correctness": {
+        "score": 5,
+        "reason": "Fully correct, all key facts match."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The claim that Dr. Ram Baran Yadav is Nepal's first president is supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.00501,
+      "latency_s": 4.208743095397949
+    },
+    {
+      "id": "q022",
+      "lang": "en",
+      "type": "test",
+      "question": "Who was the first President of Nepal?",
+      "gold": "Dr. Ram Baran Yadav was Nepal's first President.",
+      "answer": "The first President of Nepal was Dr. Ram Baran Yadav.",
+      "correctness": {
+        "score": 5,
+        "reason": "The system answer is fully correct and matches the gold answer."
+      },
+      "faithfulness": {
+        "score": 3,
+        "reason": "The context mentions Dr. Ram Baran Yadav as a former president but does not explicitly state he was the first president."
+      },
+      "lang_match": "match",
+      "cost": 0.0057075,
+      "latency_s": 5.950171947479248
+    },
+    {
+      "id": "q023",
+      "lang": "np-roman",
+      "type": "test",
+      "question": "nepal ko pahilo president ko hun?",
+      "gold": "Dr. Ram Baran Yadav was the first President.",
+      "answer": "The first President of Nepal was Dr. Ram Baran Yadav.",
+      "correctness": {
+        "score": 5,
+        "reason": "Fully correct, all key facts match."
+      },
+      "faithfulness": {
+        "score": 3,
+        "reason": "The context mentions Dr. Ram Baran Yadav as a former president but does not explicitly state he was the first president."
+      },
+      "lang_match": "match",
+      "cost": 0.005710000000000001,
+      "latency_s": 5.620774030685425
+    },
+    {
+      "id": "q024",
+      "lang": "ne",
+      "type": "test",
+      "question": "नेपालमा गणतन्त्रको घोषणा कहिले भयो?",
+      "gold": "नेपाल संघीय लोकतान्त्रिक गणतन्त्रको घोषणा भएको थियो।",
+      "answer": "नेपालमा गणतन्त्रको घोषणा वि.सं. २०६५ जेठ १५ मा भयो।",
+      "correctness": {
+        "score": 5,
+        "reason": "The system answer provides the specific date of the declaration of the republic in Nepal, which aligns with the gold answer's context."
+      },
+      "faithfulness": {
+        "score": 1,
+        "reason": "The retrieved context does not mention the declaration of a republic in Nepal in 2065."
+      },
+      "lang_match": "match",
+      "cost": 0.004197500000000001,
+      "latency_s": 3.301525354385376
+    },
+    {
+      "id": "q025",
+      "lang": "en",
+      "type": "test",
+      "question": "When did Nepal become a federal democratic republic?",
+      "gold": "Nepal was declared a federal democratic republic.",
+      "answer": "Nepal became a federal democratic republic on May 28, 2008 (Jestha 15, 2065 B.S.), as declared by the first meeting of the Constituent Assembly.",
+      "correctness": {
+        "score": 5,
+        "reason": "The system answer is fully correct and provides additional relevant details."
+      },
+      "faithfulness": {
+        "score": 1,
+        "reason": "The retrieved context does not mention the date Nepal became a federal democratic republic."
+      },
+      "lang_match": "match",
+      "cost": 0.0063725000000000006,
+      "latency_s": 6.3439037799835205
+    },
+    {
+      "id": "q026",
+      "lang": "ne",
+      "type": "test",
+      "question": "२०४६ सालमा के भएको थियो?",
+      "gold": "२०४६ सालमा जनआन्दोलन भएको थियो।",
+      "answer": "२०४६ सालमा नेपालमा जनआन्दोलन भएको थियो। यस जनआन्दोलनले पञ्चायती व्यवस्था अन्त्य गर्‍यो। नेपाली कांग्रेस र संयुक्त वाममोर्चाले मिलेर देशव्यापी आन्दोलन चर्काए, जसका कारण अन्ततः २०४६ साल चैत्र २६ गते राति दलमाथिको प्रतिबन्ध हटाइयो।",
+      "correctness": {
+        "score": 5,
+        "reason": "The system answer is fully correct and provides additional context about the 2046 movement."
+      },
+      "faithfulness": {
+        "score": 3,
+        "reason": "The retrieved context supports the occurrence of the 2046 movement and its impact on the Panchayat system, but does not mention the lifting of the ban on parties on Chaitra 26."
+      },
+      "lang_match": "match",
+      "cost": 0.005215,
+      "latency_s": 4.2074079513549805
+    },
+    {
+      "id": "q027",
+      "lang": "en",
+      "type": "test",
+      "question": "What happened in 2046 BS in Nepal?",
+      "gold": "The 2046 BS Jana Andolan (People's Movement) took place.",
+      "answer": "In 2046 BS, a significant people's movement took place in Nepal, leading to political changes. Following this movement, the Panchayat system was dissolved, and an interim government was formed under the leadership of Krishna Prasad Bhattarai. Subsequently, on Kartik 23, 2047 BS, the Constitution of the Kingdom of Nepal, 2047 was promulgated. This period marked the transition towards a more democratic political system in Nepal.",
+      "correctness": {
+        "score": 5,
+        "reason": "The system answer is fully correct and provides additional context about the political changes following the 2046 BS Jana Andolan."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "Every factual claim in the answer is supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.006664999999999999,
+      "latency_s": 6.133014440536499
+    },
+    {
+      "id": "q028",
+      "lang": "ne",
+      "type": "test",
+      "question": "२०६२/६३ को आन्दोलन के थियो?",
+      "gold": "२०६२/६३ को जनआन्दोलन नेपालमा भएको दोस्रो जनआन्दोलन हो।",
+      "answer": "२०६२/६३ को आन्दोलन नेपालमा भएको दोस्रो जनआन्दोलन थियो। यो आन्दोलन राजा ज्ञानेन्द्रको प्रत्यक्ष शासनको विरोधमा भएको थियो। नेपाली कांग्रेस, नेकपा एमाले, नेपाली कांग्रेस (प्रजातान्त्रिक), जनमोर्चा नेपाल, नेपाल मजदुर किसान पार्टी, नेपाल सद्भावना पार्टी (आनन्दीदेवी) र संयुक्त वाममोर्चासहित सातदलीय गठबन्धनले यस आन्दोलनलाई अघि बढायो। आन्दोलनको क्रममा नेपाली कांग्रेस, नेकपा एमाले र नेकपा माओवादीबीच २०६२ मङ्सिर ७ गते भारतको नयाँ दिल्लीमा १२ बुँदे सम्झौता भयो। यस आन्दोलनको सफलतापछि २०६३ माघ १ गते नेपालको अन्तरिम संविधान, २०६३ जारी भयो।",
+      "correctness": {
+        "score": 5,
+        "reason": "Fully correct, all key facts match and additional context is provided."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "Every factual claim in the answer is supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.0069525,
+      "latency_s": 4.865369558334351
+    },
+    {
+      "id": "q029",
+      "lang": "en",
+      "type": "test",
+      "question": "What was the 2062/63 movement in Nepal?",
+      "gold": "It was the second People's Movement (Jana Andolan).",
+      "answer": "The 2062/63 movement in Nepal, also known as the Second People's Movement, was a peaceful uprising that lasted for 19 days from Chaitra 24, 2062, to Baisakh 11, 2063. It was a response to King Gyanendra's direct rule, which began on Magh 19, 2061. The movement was led by a coalition of seven political parties, including the Nepali Congress, CPN-UML, and others, who formed a seven-party alliance on Baisakh 25, 2062. The movement aimed to restore democracy and led to the signing of a comprehensive peace agreement between the seven-party government and the CPN (Maoist) on Mangsir 5, 2063. This movement culminated in the promulgation of the Interim Constitution of Nepal, 2063, on Magh 1, 2063, and paved the way for the election of a Constituent Assembly.",
+      "correctness": {
+        "score": 5,
+        "reason": "The system answer is fully correct and provides detailed information matching the gold answer."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "Every claim in the answer is supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.00828,
+      "latency_s": 6.614165544509888
+    },
+    {
+      "id": "q030",
+      "lang": "ne",
+      "type": "test",
+      "question": "नेपालमा पञ्चायत व्यवस्था कहिलेसम्म रह्यो?",
+      "gold": "२०४६ को जनआन्दोलनपछि पञ्चायत व्यवस्था विघटन भयो।",
+      "answer": "नेपालमा पञ्चायत व्यवस्था २०४६ सालको जनआन्दोलनसम्म रह्यो। जनआन्दोलनपछि पञ्चायत विघटन भयो र नयाँ संविधान जारी गरियो।",
+      "correctness": {
+        "score": 5,
+        "reason": "The system answer is fully correct and matches all key facts with the gold answer."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "All claims are supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.006109999999999999,
+      "latency_s": 4.325443744659424
+    },
+    {
+      "id": "q031",
+      "lang": "en",
+      "type": "test",
+      "question": "What replaced the Panchayat system in Nepal?",
+      "gold": "Multiparty democracy was restored after the Panchayat era ended.",
+      "answer": "The Panchayat system in Nepal was replaced by a democratic governance system. The context mentions the transition to a democratic system following the political change in 2007 B.S. (1951 A.D.), which marked the beginning of administrative reforms and the establishment of democratic governance structures.",
+      "correctness": {
+        "score": 3,
+        "reason": "The system answer is partially correct, mentioning a transition to democracy but incorrectly associates it with 1951 instead of the end of the Panchayat era in 1990."
+      },
+      "faithfulness": {
+        "score": 3,
+        "reason": "The context supports the transition to a democratic system in 2007 B.S., but does not mention the Panchayat system."
+      },
+      "lang_match": "match",
+      "cost": 0.0051975,
+      "latency_s": 6.151332378387451
+    },
+    {
+      "id": "q032",
+      "lang": "ne",
+      "type": "test",
+      "question": "नेपालको राजधानी के हो?",
+      "gold": "नेपालको राजधानी काठमाडौं हो।",
+      "answer": "नेपालको राजधानी काठमाडौँ हो।",
+      "correctness": {
+        "score": 5,
+        "reason": "The system answer is fully correct and matches the key fact of the gold answer."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The retrieved context confirms that Kathmandu is the capital of Nepal."
+      },
+      "lang_match": "match",
+      "cost": 0.006984999999999999,
+      "latency_s": 3.200693130493164
+    },
+    {
+      "id": "q033",
+      "lang": "en",
+      "type": "test",
+      "question": "What is the capital of Nepal?",
+      "gold": "Kathmandu is the capital of Nepal.",
+      "answer": "The capital of Nepal is Kathmandu.",
+      "correctness": {
+        "score": 5,
+        "reason": "Fully correct, all key facts match."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The retrieved context supports that Kathmandu is the capital of Nepal."
+      },
+      "lang_match": "match",
+      "cost": 0.0060574999999999995,
+      "latency_s": 5.163662433624268
+    },
+    {
+      "id": "q034",
+      "lang": "np-roman",
+      "type": "test",
+      "question": "nepal ko rajdhani k ho?",
+      "gold": "Kathmandu is the capital.",
+      "answer": "The capital of Nepal is Kathmandu.",
+      "correctness": {
+        "score": 5,
+        "reason": "Fully correct, all key facts match."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The retrieved context confirms Kathmandu as the capital of Nepal."
+      },
+      "lang_match": "match",
+      "cost": 0.0061775,
+      "latency_s": 5.027281284332275
+    },
+    {
+      "id": "q035",
+      "lang": "ne",
+      "type": "test",
+      "question": "नेपालमा कति महानगरपालिका छन्?",
+      "gold": "नेपालमा ६ महानगरपालिका छन्।",
+      "answer": "नेपालमा ६ महानगरपालिका छन्।",
+      "correctness": {
+        "score": 5,
+        "reason": "The system answer is fully correct and matches the gold answer."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The claim that there are 6 महानगरपालिका in Nepal is supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.0036749999999999994,
+      "latency_s": 3.488166332244873
+    },
+    {
+      "id": "q036",
+      "lang": "en",
+      "type": "test",
+      "question": "How many metropolitan cities does Nepal have?",
+      "gold": "Nepal has 6 metropolitan cities.",
+      "answer": "Nepal has 6 metropolitan cities.",
+      "correctness": {
+        "score": 5,
+        "reason": "The system answer is fully correct and matches the gold answer."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The claim that Nepal has 6 metropolitan cities is supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.00422,
+      "latency_s": 5.190821886062622
+    },
+    {
+      "id": "q037",
+      "lang": "ne",
+      "type": "test",
+      "question": "नेपालमा कति उपमहानगरपालिका छन्?",
+      "gold": "नेपालमा ११ उपमहानगरपालिका छन्।",
+      "answer": "नेपालमा ११ उपमहानगरपालिका छन्।",
+      "correctness": {
+        "score": 5,
+        "reason": "Fully correct, all key facts match the gold answer."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The claim that there are 11 sub-metropolitan cities in Nepal is supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.0039525,
+      "latency_s": 3.2487223148345947
+    },
+    {
+      "id": "q038",
+      "lang": "en",
+      "type": "test",
+      "question": "How many sub-metropolitan cities does Nepal have?",
+      "gold": "Nepal has 11 sub-metropolitan cities.",
+      "answer": "Nepal has 11 sub-metropolitan cities.",
+      "correctness": {
+        "score": 5,
+        "reason": "Fully correct, all key facts match the gold answer."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The claim that Nepal has 11 sub-metropolitan cities is supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.0050875,
+      "latency_s": 5.117161989212036
+    },
+    {
+      "id": "q039",
+      "lang": "ne",
+      "type": "test",
+      "question": "नेपालको मुद्रा के हो?",
+      "gold": "नेपालको मुद्रा नेपाली रुपैयाँ हो।",
+      "answer": "माफ गर्नुहोस्, यो जानकारी दिइएको सन्दर्भमा भेटिएन। प्रश्न अलि फरक तरिकाले सोध्नुभयो भने सहयोग गर्न सक्छु।",
+      "correctness": {
+        "score": 1,
+        "reason": "The system answer is wrong and does not provide the correct information about Nepal's currency."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The answer correctly states that the information is not found in the provided context."
+      },
+      "lang_match": "match",
+      "cost": 0.0060975000000000005,
+      "latency_s": 4.123866081237793
+    },
+    {
+      "id": "q040",
+      "lang": "en",
+      "type": "test",
+      "question": "What is the currency of Nepal?",
+      "gold": "The Nepalese Rupee is the currency.",
+      "answer": "The currency of Nepal is mentioned in the context as \"नेपाली राष्ट्रिय मुद्रा\" which translates to \"Nepali national currency.\" However, the specific name of the currency is not provided in the given context.",
+      "correctness": {
+        "score": 2,
+        "reason": "The system answer is mostly wrong as it fails to provide the specific name of the currency, which is the key fact."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The answer accurately reflects the context mentioning 'नेपाली राष्ट्रिय मुद्रा' without specifying the currency name."
+      },
+      "lang_match": "match",
+      "cost": 0.005932499999999999,
+      "latency_s": 5.345428466796875
+    },
+    {
+      "id": "q041",
+      "lang": "ne",
+      "type": "test",
+      "question": "नेपालको सबैभन्दा ठूलो पर्व कुन हो?",
+      "gold": "दसैं नेपालको सबैभन्दा ठूलो चाड हो।",
+      "answer": "नेपालको सबैभन्दा ठूलो पर्व दसैं हो। यसलाई नेपालको राष्ट्रिय पर्वको रूपमा मनाइन्छ।",
+      "correctness": {
+        "score": 5,
+        "reason": "Fully correct, all key facts match."
+      },
+      "faithfulness": {
+        "score": 3,
+        "reason": "The retrieved context supports that Dashain is a national festival of Nepal, but it does not explicitly state it is the largest festival."
+      },
+      "lang_match": "match",
+      "cost": 0.005520000000000001,
+      "latency_s": 3.2296478748321533
+    },
+    {
+      "id": "q042",
+      "lang": "en",
+      "type": "test",
+      "question": "What is Tihar in Nepal?",
+      "gold": "Tihar is a major Nepali festival.",
+      "answer": "Sorry, I couldn't find that in the provided context. Try rephrasing your question — I'm happy to help!",
+      "correctness": {
+        "score": 1,
+        "reason": "The system answer is off-topic and does not provide any information about Tihar."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The answer does not make any factual claims and is consistent with the context."
+      },
+      "lang_match": "match",
+      "cost": 0.0052025,
+      "latency_s": 5.0250771045684814
+    },
+    {
+      "id": "q043",
+      "lang": "ne",
+      "type": "test",
+      "question": "राष्ट्रिय जनगणना कति सालमा भएको हो?",
+      "gold": "राष्ट्रिय जनगणना २०७८ मा भएको हो।",
+      "answer": "राष्ट्रिय जनगणना वि.सं. २०६८ र २०७८ मा भएको हो।",
+      "correctness": {
+        "score": 4,
+        "reason": "The system answer is mostly correct but includes an additional year not mentioned in the gold answer."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "Both census years २०६८ and २०७८ are supported by the context."
+      },
+      "lang_match": "match",
+      "cost": 0.007385,
+      "latency_s": 3.226977825164795
+    },
+    {
+      "id": "q044",
+      "lang": "en",
+      "type": "test",
+      "question": "When was Nepal's latest national census?",
+      "gold": "The latest national census was in 2078 BS.",
+      "answer": "Nepal's latest national census was conducted in 2078 according to the Nepali calendar.",
+      "correctness": {
+        "score": 5,
+        "reason": "The system answer is fully correct and matches the key fact of the gold answer."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The claim about the national census being conducted in 2078 is supported by the context."
+      },
+      "lang_match": "match",
+      "cost": 0.006145,
+      "latency_s": 7.307294130325317
+    },
+    {
+      "id": "q045",
+      "lang": "ne",
+      "type": "test",
+      "question": "बागमती प्रदेशको पूर्वतर्फ कुन प्रदेश पर्छ?",
+      "gold": "बागमती प्रदेशको पूर्वतर्फ कोशी प्रदेश पर्छ।",
+      "answer": "बागमती प्रदेशको पूर्वतर्फ कोशी प्रदेश पर्छ।",
+      "correctness": {
+        "score": 5,
+        "reason": "Fully correct, all key facts match the gold answer."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The claim that Bagmati Province's eastern border is with Koshi Province is supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.005622500000000001,
+      "latency_s": 2.129265308380127
+    },
+    {
+      "id": "q046",
+      "lang": "en",
+      "type": "test",
+      "question": "Which province lies east of Bagmati province?",
+      "gold": "Koshi province lies east of Bagmati.",
+      "answer": "The province that lies east of Bagmati province is Koshi Province.",
+      "correctness": {
+        "score": 5,
+        "reason": "The system answer is fully correct and matches the gold answer."
+      },
+      "faithfulness": {
+        "score": 1,
+        "reason": "The retrieved context does not mention Bagmati or Koshi Province."
+      },
+      "lang_match": "match",
+      "cost": 0.0061975,
+      "latency_s": 3.6505537033081055
+    },
+    {
+      "id": "q047",
+      "lang": "ne",
+      "type": "test",
+      "question": "कर्णाली प्रदेशको पूर्वतर्फ कुन प्रदेश पर्छ?",
+      "gold": "कर्णाली प्रदेशको पूर्वतर्फ गण्डकी प्रदेश पर्छ।",
+      "answer": "कर्णाली प्रदेशको पूर्वतर्फ गण्डकी प्रदेश र लुम्बिनी प्रदेश पर्छ।",
+      "correctness": {
+        "score": 3,
+        "reason": "The system answer incorrectly includes Lumbini Province, which is not directly east of Karnali Province."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "Every factual claim in the answer is supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.0047775000000000005,
+      "latency_s": 2.1649017333984375
+    },
+    {
+      "id": "q048",
+      "lang": "ne",
+      "type": "test",
+      "question": "नेपालको पहिलो योजना कुन हो?",
+      "gold": "पहिलो पञ्चवर्षीय योजना (२०१३-२०१८) नेपालको पहिलो योजना हो।",
+      "answer": "नेपालको पहिलो योजना प्रथम पञ्चवर्षीय योजना (२०१३-२०१८) हो।",
+      "correctness": {
+        "score": 5,
+        "reason": "The system answer is fully correct and matches the key facts of the gold answer."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The answer is fully supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.0046524999999999995,
+      "latency_s": 2.2517669200897217
+    },
+    {
+      "id": "q049",
+      "lang": "en",
+      "type": "test",
+      "question": "What was Nepal's first development plan?",
+      "gold": "The First Five-Year Plan (2013-2018 BS) was Nepal's first development plan.",
+      "answer": "Nepal's first development plan was the First Five-Year Plan, which spanned from 1956 to 1961 (2013-2018 in the Nepali calendar).",
+      "correctness": {
+        "score": 5,
+        "reason": "The system answer is fully correct, matching all key facts with the gold answer."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "Every claim in the answer is supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.005877500000000001,
+      "latency_s": 4.1029956340789795
+    },
+    {
+      "id": "q050",
+      "lang": "ne",
+      "type": "test",
+      "question": "नेपालमा सिमरा (सिम्रौनगढ) कुन वंशको राजधानी थियो?",
+      "gold": "सिम्रौनगढ कर्णाट वंशको राजधानी थियो।",
+      "answer": "नेपालमा सिमरा (सिम्रौनगढ) कर्नाटक वंशको राजधानी थियो।",
+      "correctness": {
+        "score": 3,
+        "reason": "The system answer incorrectly states 'कर्नाटक' instead of 'कर्णाट'."
+      },
+      "faithfulness": {
+        "score": 5,
+        "reason": "The claim that Simra (Simraungadh) was the capital of the Karnatak dynasty in Nepal is supported by the retrieved context."
+      },
+      "lang_match": "match",
+      "cost": 0.0085075,
+      "latency_s": 9.155201435089111
+    },
+    {
+      "id": "oos001",
+      "lang": "en",
+      "type": "trick",
+      "question": "Who won the 2024 FIFA World Cup?",
+      "answer": "Sorry, I couldn't find that in the provided context. Try rephrasing your question — I'm happy to help!",
+      "refused_correctly": true,
+      "cost": 0.002425,
+      "latency_s": 4.197259902954102
+    },
+    {
+      "id": "oos002",
+      "lang": "ne",
+      "type": "trick",
+      "question": "भारतको प्रधानमन्त्री को हुन्?",
+      "answer": "Sorry, I couldn't find that in the provided context. Try rephrasing your question — I'm happy to help!",
+      "refused_correctly": true,
+      "cost": 0.006215,
+      "latency_s": 3.7700774669647217
+    },
+    {
+      "id": "oos003",
+      "lang": "en",
+      "type": "trick",
+      "question": "What is the capital of France?",
+      "answer": "Sorry, I couldn't find that in the provided context. Try rephrasing your question — I'm happy to help!",
+      "refused_correctly": true,
+      "cost": 0.00688,
+      "latency_s": 5.70984411239624
+    },
+    {
+      "id": "oos004",
+      "lang": "ne",
+      "type": "trick",
+      "question": "चीनको क्षेत्रफल कति हो?",
+      "answer": "माफ गर्नुहोस्, यो जानकारी दिइएको सन्दर्भमा भेटिएन। प्रश्न अलि फरक तरिकाले सोध्नुभयो भने सहयोग गर्न सक्छु।",
+      "refused_correctly": true,
+      "cost": 0.00712,
+      "latency_s": 7.613645792007446
+    },
+    {
+      "id": "oos005",
+      "lang": "en",
+      "type": "trick",
+      "question": "Who is the current CEO of Tesla?",
+      "answer": "Sorry, I couldn't find that in the provided context. Try rephrasing your question — I'm happy to help!",
+      "refused_correctly": true,
+      "cost": 0.0017075,
+      "latency_s": 4.809035062789917
+    },
+    {
+      "id": "oos006",
+      "lang": "np-roman",
+      "type": "trick",
+      "question": "USA ko rastrapati ko hun?",
+      "answer": "Sorry, I couldn't find that in the provided context. Try rephrasing your question — I'm happy to help!",
+      "refused_correctly": true,
+      "cost": 0.0042725,
+      "latency_s": 4.496845245361328
+    },
+    {
+      "id": "oos007",
+      "lang": "ne",
+      "type": "trick",
+      "question": "पाइथन प्रोग्रामिङ भाषा कसले बनाएको हो?",
+      "answer": "माफ गर्नुहोस्, यो जानकारी दिइएको सन्दर्भमा भेटिएन। प्रश्न अलि फरक तरिकाले सोध्नुभयो भने सहयोग गर्न सक्छु।",
+      "refused_correctly": true,
+      "cost": 0.0052250000000000005,
+      "latency_s": 2.4550857543945312
+    },
+    {
+      "id": "oos008",
+      "lang": "en",
+      "type": "trick",
+      "question": "How do I bake chocolate cake?",
+      "answer": "Sorry, I couldn't find that in the provided context. Try rephrasing your question — I'm happy to help!",
+      "refused_correctly": true,
+      "cost": 0.0017050000000000001,
+      "latency_s": 4.3607566356658936
+    },
+    {
+      "id": "oos009",
+      "lang": "en",
+      "type": "trick",
+      "question": "What is the GDP of Japan in 2024?",
+      "answer": "Sorry, I couldn't find that in the provided context. Try rephrasing your question — I'm happy to help!",
+      "refused_correctly": true,
+      "cost": 0.006145,
+      "latency_s": 3.555809259414673
+    },
+    {
+      "id": "oos010",
+      "lang": "ne",
+      "type": "trick",
+      "question": "भारतमा कति राज्य छन्?",
+      "answer": "माफ गर्नुहोस्, यो जानकारी दिइएको सन्दर्भमा भेटिएन। प्रश्न अलि फरक तरिकाले सोध्नुभयो भने सहयोग गर्न सक्छु।",
+      "refused_correctly": true,
+      "cost": 0.007560000000000001,
+      "latency_s": 2.425429105758667
+    },
+    {
+      "id": "oos011",
+      "lang": "en",
+      "type": "trick",
+      "question": "Who invented the telephone?",
+      "answer": "Sorry, I couldn't find that in the provided context. Try rephrasing your question — I'm happy to help!",
+      "refused_correctly": true,
+      "cost": 0.0017,
+      "latency_s": 3.639540910720825
+    },
+    {
+      "id": "oos012",
+      "lang": "np-roman",
+      "type": "trick",
+      "question": "London ko mausam kasto hunchha?",
+      "answer": "Sorry, I couldn't find that in the provided context. Try rephrasing your question — I'm happy to help!",
+      "refused_correctly": true,
+      "cost": 0.0050325,
+      "latency_s": 3.6726536750793457
+    },
+    {
+      "id": "oos013",
+      "lang": "ne",
+      "type": "trick",
+      "question": "पाकिस्तानको राष्ट्रिय खेल के हो?",
+      "answer": "माफ गर्नुहोस्, यो जानकारी दिइएको सन्दर्भमा भेटिएन। प्रश्न अलि फरक तरिकाले सोध्नुभयो भने सहयोग गर्न सक्छु।",
+      "refused_correctly": true,
+      "cost": 0.0057799999999999995,
+      "latency_s": 3.084479331970215
+    },
+    {
+      "id": "oos014",
+      "lang": "en",
+      "type": "trick",
+      "question": "What's the best stock to buy today?",
+      "answer": "Sorry, I couldn't find that in the provided context. Try rephrasing your question — I'm happy to help!",
+      "refused_correctly": true,
+      "cost": 0.0017075,
+      "latency_s": 5.374795436859131
+    },
+    {
+      "id": "oos015",
+      "lang": "en",
+      "type": "trick",
+      "question": "What is the speed of light in vacuum?",
+      "answer": "Sorry, I couldn't find that in the provided context. Try rephrasing your question — I'm happy to help!",
+      "refused_correctly": true,
+      "cost": 0.00603,
+      "latency_s": 5.035057544708252
+    }
+  ]
+}

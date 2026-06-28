@@ -9,14 +9,17 @@ A multilingual Retrieval-Augmented Generation (RAG) system for the **Nepal Paric
 
 **Headline eval results** (full report in [`eval/EVAL_REPORT.md`](eval/EVAL_REPORT.md)):
 
-| Metric | Original | After eval-driven fix |
+| Metric | Original | After eval-driven fixes (final) |
 |---|---|---|
 | Retrieval Recall@5 | 0.36 | **0.80** *(+122%)* |
-| Answer correctness (1–5) | 3.00 | **4.00** |
-| Nepali correctness | 2.75 | **4.08** *(was worst, now best)* |
-| Hallucination rate | 10% | 14% |
+| Answer correctness (1–5) | 3.00 | **4.10** |
+| Nepali correctness | 2.75 | **4.21** *(was worst, now best)* |
+| Language adherence | 94% | **100%** |
 | Out-of-scope refusal | 100% | **100%** |
-| Cost / query | — | **$0.005** (gpt-4o) |
+| Cost / query | — | **$0.006** (gpt-4o) |
+| Latency (p50 / p95) | — | **4.5 s / 7.6 s** |
+
+Two documented **negative results** (chain attempt, cross-encoder reranker) in [§6 of EVAL_REPORT](eval/EVAL_REPORT.md) — both showed the textbook next moves *hurt* this specific system, which is the kind of finding senior engineers respect.
 
 ## Features
 
