@@ -1,0 +1,40 @@
+environment: production
+config_version: "1.0"
+config_source: yaml_file
+
+processor:
+  project_id: your-prod-project-id
+  processor_id: your-prod-processor-id
+  location: us
+  processor_version: pretrained-ocr-v2.1-2024-07-01
+  language_hints:
+    - ne
+
+storage:
+  input_gcs_uri: gs://your-prod-bucket/input/
+  output_gcs_uri: gs://your-prod-bucket/output/
+  mime_type: application/pdf
+
+processing:
+  wait_for_completion: true
+  extract_text: true
+  save_pages: true
+  poll_interval: 60
+  max_wait_time: null  # No timeout
+
+output:
+  output_dir: extracted_text
+  log_file: batch_ocr.log
+  log_level: INFO
+  save_statistics: true
+
+ocr:
+  enable_native_pdf_parsing: true
+  enable_image_quality_scores: true
+  enable_symbol: true
+  advanced_ocr_options:
+    - ENABLE_FONT_IDENTIFICATION
+
+security:
+  service_account_key_path: null  # Use default credentials
+  use_default_credentials: true
